@@ -7,14 +7,11 @@
 #include <stdio.h>
 
 main() {
-    
+
     /* char isn't big enough to hold EOF? */
     int c;
 
-    c = getchar();
-
-    while (c != EOF) {
+    while ( (c = getchar()) != EOF) {
         putchar(c);
-        c = getchar();
     }
 }
