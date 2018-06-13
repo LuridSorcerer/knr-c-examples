@@ -7,13 +7,18 @@
 #include <stdio.h>
 
 main() {
-    int c, nl;
+    int c, nl, b, t;
 
-    nl = 0;
+    nl = b = t = 0;
 
-    while ((c = getchar()) != EOF)
-        if(c == '\n')
+    while ((c = getchar()) != EOF) {
+        if(c == '\n') 
             ++nl;
-
-    printf("%d\n",nl);
+        if(c == ' ')
+            ++b;
+        if(c == '\t')
+            ++t;
+    }
+    
+    printf("%d %d %d\n",nl,b,t);
 }
