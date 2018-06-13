@@ -14,4 +14,7 @@ main() {
     while ( (c = getchar()) != EOF) {
         putchar(c);
     }
+
+    /* print the value of the EOF character */
+    printf("%d",EOF);
 }
