@@ -6,7 +6,7 @@
 /* standard I/O library */
 #include <stdio.h>
 
-/* declare function */
+/* fuction prototype */
 int power(int m, int n);
 
 main() {
