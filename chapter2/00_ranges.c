@@ -40,43 +40,61 @@ int main() {
 
     //
     // Calculate
-    //
+    // For signed numbers, the method I'm using is to set bit 0 then shift it
+    // into the left-most bit. This gives the largest possible negative number.
+    // Subtract one from that and it will roll over and give the hightest possible
+    // positive number. 
+    // For unsigned, I set the variable to zero and subtract 1, causing it to
+    // roll over to the highest possible value. 
 
     // char
-    char sc = 0;
-    while ( (char)(sc-1) < 0 ) { sc--; }
+    char sc = 1;
+    sc <<= 7;
     printf("Char Min:%d ", sc);
-    sc = 0;
-    while ( (char)(sc+1) > 0 ) { sc++; }
+    sc--;
     printf("Max:%d\n", sc);
 
     // uchar
     unsigned char uc = 0;
-    do { uc++; } while( (unsigned char)(uc+1) > 0 );
+    uc--;
     printf("UChar Min:%d Max:%d\n", 0, uc);
 
     // short
-    short ss = 0;
-    while ( (short)(ss-1) < 0) { ss--; }
+    short ss = 1;
+    ss <<= 15;
     printf("Short Min:%d ", ss);
-    ss = 0;
-    while( (short)(ss+1) > 0) { ss++; }
+    ss--;
     printf("Max:%d\n",ss);
 
     // ushort
     unsigned short us = 0;
-    while ( (unsigned short)(us+1) > 0) { us++; }
+    us--;
     printf("UShort Min:%u Max:%u\n", 0, us);
 
     // int
+    int si = 1;
+    si <<= 31;
+    printf("Int Min:%d",si);
+    si--;
+    printf(" Max:%d\n",si);
 
     // uint
     unsigned int ui = 0;
-    while ( (unsigned int)(ui+1) > 0) {ui++;}
+    ui--;
     printf("UInt Min:%u Max:%u\n", 0, ui);
 
     // long
+    long sl = 1;
+    sl <<= 63;
+    printf("Long Min:%ld",sl);
+    sl--;
+    printf(" Max:%ld\n",sl);
 
     // ulong
+    unsigned long ul = 0;
+    ul--;
+    printf("ULong Min:%lu Max:%lu\n", 0L, ul);
+
+    // I'll worry about the floating point types another day...
 
 }
